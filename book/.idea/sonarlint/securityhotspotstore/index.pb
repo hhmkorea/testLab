@@ -9,8 +9,6 @@ J
 book-frontend/.eslintrc.js,1\6\1688747cce451da56924e35bccffeaeab9ed704c
 L
 book-frontend/.prettierrc.js,8\7\8774d8d5dffc3ef18efbd246e7f006a98fceb767
-P
- book-frontend/reportWebVitals.js,b\1\b1aced5464cf87da56b8433397d49b0408f8ab81
 V
 &book-frontend/src/conponents/Header.js,c\7\c7ffdf7029f43951f95145b49ad32622271db385
 V
