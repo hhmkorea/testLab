@@ -1,0 +1,5 @@
+/.idea/
+/book/.idea/
+/book/.metadata/
+/book/book-backend/target/
+/book/book-frontend/node_modules/
