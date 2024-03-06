@@ -56,7 +56,8 @@ public class BookControllerIntegreTest {
 	
 	@BeforeEach	// 모든 테스트가 실행되기 전에 각각 한번씩 실행됨. (JUnit4는 @Before)
 	public void init() {
-		entityManager.createNativeQuery("ALTER TABLE book ALTER COLUMN id RESTART WITH 1").executeUpdate();
+		//entityManager.createNativeQuery("ALTER TABLE book ALTER COLUMN id RESTART WITH 1").executeUpdate();
+		entityManager.createNativeQuery("ALTER TABLE book AUTO_INCREMENT =1").executeUpdate();
 	}
 	
 	@Test
