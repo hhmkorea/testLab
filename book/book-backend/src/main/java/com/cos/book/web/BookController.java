@@ -2,6 +2,7 @@ package com.cos.book.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +31,7 @@ public class BookController {
 		// ResponseEntity : book타입 데이타랑 HttpStatus도 함께 담아서 리턴함.
 	}
 	
+	@CrossOrigin
 	@GetMapping("/book")
 	public ResponseEntity<?> findAll() { // <?> 어떤 타입을 리턴할지 모름, 어떤 타입이든 리턴 가능,
 		return new ResponseEntity<>(bookService.findAll(), HttpStatus.OK); // 200 
