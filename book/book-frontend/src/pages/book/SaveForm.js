@@ -27,21 +27,24 @@ const SaveForm = () => {
       body: JSON.stringify(book), // JS 오브젝트를 Json 형태로 만들어서 던짐.
     })
       .then((res) => {
-        console.log(1, res);
+        console.log('정상', res);
         if (res.status === 201) {
-          // try~catch로 해도 됨.
           return res.json();
         } else {
           return null;
         }
       })
       .then((res) => {
+        // Catch는 여기서 오류가 나야 실행됨(예:json 안들어왔을때)
         if (res !== null) {
           //props.history.push('/');
           navigate('/');
         } else {
           alert('책 등록에 실패하였습니다.');
         }
+      })
+      .catch((error) => {
+        console.log('실패', error);
       });
   };
 
