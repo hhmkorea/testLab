@@ -37,10 +37,17 @@ const Detail = (props) => {
         }
       });
   };
+
+  const updateBook = () => {
+    navigate('/updateForm/' + id);
+  };
+
   return (
     <div>
       <h1>책 상세보기</h1>
-      <Button variant="warning">수정</Button>{' '}
+      <Button variant="warning" onClick={updateBook}>
+        수정
+      </Button>{' '}
       <Button variant="danger" onClick={deleteBook}>
         {' '}
         {/* 이렇게 해도 됨.onClick={() => deleteBook(book.id)} */}
