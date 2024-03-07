@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Detail = (props) => {
   const propsParam = useParams();
@@ -21,9 +22,30 @@ const Detail = (props) => {
       });
   }, []);
 
+  let navigate = useNavigate();
+
+  const deleteBook = () => {
+    fetch('http://localhost:8080/book/' + id, {
+      method: 'DELETE',
+    })
+      .then((res) => res.text())
+      .then((res) => {
+        if (res === 'ok') {
+          navigate('/');
+        } else {
+          alert('삭제 실패');
+        }
+      });
+  };
   return (
     <div>
-      <h1>상세보기</h1>
+      <h1>책 상세보기</h1>
+      <Button variant="warning">수정</Button>{' '}
+      <Button variant="danger" onClick={deleteBook}>
+        {' '}
+        {/* 이렇게 해도 됨.onClick={() => deleteBook(book.id)} */}
+        삭제
+      </Button>
       <hr />
       <h1>{book.title}</h1>
       <h3>{book.author}</h3>
