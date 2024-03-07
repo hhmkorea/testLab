@@ -21,13 +21,14 @@ import lombok.RequiredArgsConstructor;
 public class BookController {
 	
 	private final BookService bookService;
-	
+
+	@CrossOrigin
 	@PostMapping("/book")
 	public ResponseEntity<?> save(@RequestBody Book book) { // @RequestBody : json 형태로 데이타 받음.		
 		// List<Book> abc = new ArrayList<Book>();
 		// java 1.6이상은 new ArrayList<>() 만 넣어도 됨.
 		//<?>은 리턴될때 데이터 타입이 정해짐.
-		return new ResponseEntity<>(bookService.save(book), HttpStatus.CREATED);
+		return new ResponseEntity<>(bookService.save(book), HttpStatus.CREATED); // 201
 		// ResponseEntity : book타입 데이타랑 HttpStatus도 함께 담아서 리턴함.
 	}
 	
